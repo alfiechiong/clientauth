@@ -1,11 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Router from './components/routes/router'
+import Router from './components/routes/Router'
+import {Provider} from 'react-redux'
+import store from './redux/store'
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './Theme'
 
 function App() {
   return (
-   <Router />
+    <ThemeProvider theme={theme}>
+    <Provider store={store}>  
+    <Router />
+   </Provider>
+   </ThemeProvider>
   );
 }
 
